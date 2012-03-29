@@ -1,0 +1,8 @@
+.build/*
+Dist-Zilla-MintingProfile-SYP-*/*
+blib/*
+*.bak
+*.gz
+Makefile
+pm_to_blib
+nytprof*
