@@ -27,7 +27,9 @@ use warnings qw(all);
 # our @EXPORT         = qw();
 
 # use Carp qw(carp confess);
-use Moo;
+
+use Moose;
+# use Moo;
 # use MooX::Types::MooseLike::Base qw(
 #     AnyOf
 #     ArrayRef
@@ -41,6 +43,7 @@ use Moo;
 #     is_Int
 # );
 
+# with 'Some::Class';
 # extends 'Other::Class';
 
 # no if ($] >= 5.017010), warnings => 'experimental';
@@ -53,7 +56,7 @@ use Moo;
 #
 # =cut
 
-has attribute   => (is => 'ro', isa => Int, default => sub { 0 });
+has attribute   => (is => 'ro', isa => 'Int', default => sub { 0 });
 
 # arount parent_method => sub {
 #     my $name = shift;
@@ -84,9 +87,13 @@ sub method {
 =head1 SEE ALSO
 
 =for :list
+* L<Moose>
 * L<Moo>
 * L<MooX::Types::MooseLike::Base>
 
 =cut
+
+no Moose;
+__PACKAGE__->meta->make_immutable;
 
 1;
